@@ -2,7 +2,7 @@
 
 set -e
 
-NETBSD_URL=https://cdn.netbsd.org/pub/NetBSD/NetBSD-8.0_RC1
+NETBSD_URL=https://cdn.netbsd.org/pub/NetBSD/NetBSD-8.0
 
 mkdir netbsd
 cd netbsd
