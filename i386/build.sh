@@ -25,3 +25,22 @@ MKUNPRIVED=yes TOOLDIR=/x-tools/i386-unknown-netbsd \
 
 cd ../..
 rm -rf usr
+
+cat > /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-gcc-sysroot <<'EOF'
+#!/usr/bin/env bash
+exec /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-gcc --sysroot=/x-tools/i386-unknown-netbsd/sysroot "$@"
+EOF
+
+cat > /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-g++-sysroot <<'EOF'
+#!/usr/bin/env bash
+exec /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-g++ --sysroot=/x-tools/i386-unknown-netbsd/sysroot "$@"
+EOF
+
+GCC_SHA1=`sha1sum -b /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-gcc | cut -d' ' -f1`
+GPP_SHA1=`sha1sum -b /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-g++ | cut -d' ' -f1`
+
+echo "# $GCC_SHA1" >> /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-gcc-sysroot
+echo "# $GPP_SHA1" >> /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-g++-sysroot
+
+chmod +x /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-gcc-sysroot
+chmod +x /x-tools/i386-unknown-netbsd/bin/i486--netbsdelf-g++-sysroot
