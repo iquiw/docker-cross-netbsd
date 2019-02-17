@@ -8,3 +8,6 @@ RUN apt-get update && \
 
 ENV PATH=$PATH:/x-tools/x86_64-unknown-netbsd/bin
 ENV HOSTS=x86_64-unknown-netbsd
+ENV AR_x86_64_unknown_netbsd=x86_64--netbsd-ar
+ENV CC_x86_64_unknown_netbsd=x86_64--netbsd-gcc-sysroot
+ENV CXX_x86_64_unknown_netbsd=x86_64--netbsd-g++-sysroot
