@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 COPY build.sh .
 RUN apt-get update && \
@@ -11,8 +11,3 @@ ENV HOSTS=x86_64-unknown-netbsd
 ENV AR_x86_64_unknown_netbsd=x86_64--netbsd-ar
 ENV CC_x86_64_unknown_netbsd=x86_64--netbsd-gcc-sysroot
 ENV CXX_x86_64_unknown_netbsd=x86_64--netbsd-g++-sysroot
-
-RUN git clone -b 1.32.0 --depth 1 https://github.com/rust-lang/rust.git /checkout && \
-    cd /checkout && \
-    git submodule -q sync && \
-    git submodule update --init --recursive --depth 10
