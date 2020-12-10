@@ -9,13 +9,13 @@ cd netbsd
 
 mkdir -p /x-tools/x86_64-unknown-netbsd/sysroot
 
-curl $NETBSD_URL/source/sets/src.tgz | tar xzf -
-curl $NETBSD_URL/source/sets/gnusrc.tgz | tar xzf -
-curl $NETBSD_URL/source/sets/sharesrc.tgz | tar xzf -
-curl $NETBSD_URL/source/sets/syssrc.tgz | tar xzf -
+curl -sL $NETBSD_URL/source/sets/src.tgz | tar xzf -
+curl -sL $NETBSD_URL/source/sets/gnusrc.tgz | tar xzf -
+curl -sL $NETBSD_URL/source/sets/sharesrc.tgz | tar xzf -
+curl -sL $NETBSD_URL/source/sets/syssrc.tgz | tar xzf -
 
-curl $NETBSD_URL/amd64/binary/sets/base.tar.xz | tar xJf - -C /x-tools/x86_64-unknown-netbsd/sysroot ./usr/include ./usr/lib ./lib ./usr/share/mk
-curl $NETBSD_URL/amd64/binary/sets/comp.tar.xz | tar xJf - -C /x-tools/x86_64-unknown-netbsd/sysroot ./usr/include ./usr/lib
+curl -sL $NETBSD_URL/amd64/binary/sets/base.tar.xz | tar xJf - -C /x-tools/x86_64-unknown-netbsd/sysroot ./usr/include ./usr/lib ./lib ./usr/share/mk
+curl -sL $NETBSD_URL/amd64/binary/sets/comp.tar.xz | tar xJf - -C /x-tools/x86_64-unknown-netbsd/sysroot ./usr/include ./usr/lib
 
 cd usr/src
 
