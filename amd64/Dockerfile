@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 
 COPY build.sh .
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends cmake curl ca-certificates g++ git libc-dev libssl-dev libz-dev make ninja-build pkgconf python3 && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends cmake curl ca-certificates g++ git libc-dev libssl-dev libz-dev make ninja-build pkgconf python3 xz-utils && \
     sh build.sh && \
     rm -rf /var/lib/apt/lists/*
 
