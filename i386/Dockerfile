@@ -7,7 +7,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ENV PATH=$PATH:/x-tools/i386-unknown-netbsd/bin
-ENV HOSTS=i686-unknown-netbsd
 ENV AR_i686_unknown_netbsd=i486--netbsdelf-ar
 ENV CC_i686_unknown_netbsd=i486--netbsdelf-gcc-sysroot
 ENV CXX_i686_unknown_netbsd=i486--netbsdelf-g++-sysroot
+ENV I686_UNKNOWN_NETBSD_OPENSSL_INCLUDE_DIR=/x-tools/i386-unknown-netbsd/sysroot/usr/include
+ENV I686_UNKNOWN_NETBSD_OPENSSL_LIB_DIR=/x-tools/i386-unknown-netbsd/sysroot/usr/lib
